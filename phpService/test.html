@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试PHP接口</title>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var url = 'http://127.0.0.1:88/homework/addThumbService.php'
+		$.ajax({
+			type: "POST",
+			url: url,
+			data:{count:100},
+			success:function(res){
+				console.log(res);
+			}
+		});
+	</script>
+</body>
+</html>
