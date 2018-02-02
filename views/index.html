@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>点赞组件</title>
+    <link href="/styles/main.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/libs/system/system.js"></script>
+    <script src="/scripts/myUnderscore.js"></script>
+    <script>
+      System.import('scripts/thumb.js').then(function(m) {
+          var div = document.getElementById('firstHand');
+          //创建Jquery插件
+          creatJqueryPugin(m.default.Thumb);
+          $('#jqHand').jqThumb();
+        });
+      //创建Jquery插件
+      function creatJqueryPugin(func){
+         $.fn.extend({
+            "jqThumb":function(options){
+                return this.each(function(){//这里return返回的是 jQuery对象，为了支持链式调用
+                    var curThis = $(this);
+                    var thumb = new func(curThis[0], 0);
+                    thumb.addAction();
+                });
+            }
+         });
+      }
+    </script>
+</head>
+<body>
+<!--    <div id="firstHand" class="hand">
+        <div class="finger first"></div>
+        <div class="finger two"></div>
+        <div class="finger third"></div>
+        <div class="finger four"></div>
+        <div class="finger five"></div>
+    </div> -->
+
+    <div id="jqHand" class="hand" style="right:300px;">
+        <div class="finger first"></div>
+        <div class="finger two"></div>
+        <div class="finger third"></div>
+        <div class="finger four"></div>
+        <div class="finger five"></div>
+    </div>
+
+<!--    <div id="test" style="width: 100px;height: 100px; background-color: green;"></div>
+    <div id="jqTest" style="width: 100px;height: 100px; background-color: blue;"></div> -->
+</body>
+</html>
