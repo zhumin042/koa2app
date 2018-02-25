@@ -1,3 +1,15 @@
+webpackHotUpdate(0,{
+
+/***/ 11:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__myUnderscore__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+
+
+
 //父类
 class PraseButton{
 	//构造方法
@@ -8,7 +20,7 @@ class PraseButton{
 
 	addAction(){
 		this.dom.addEventListener('click',
-			throttle(
+			__WEBPACK_IMPORTED_MODULE_0__myUnderscore__["a" /* default */]._.throttle(
 				()=>{
 					this.num++;
 					let childDom = null;
@@ -26,7 +38,7 @@ class PraseButton{
 						}
 					}
 					console.log(this.num);
-					axios.post('/addCount', {
+					__WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/addCount', {
 					    count: this.num
 					  })
 					  .then(function (response) {
@@ -51,6 +63,10 @@ class Thumb extends PraseButton{
 	}
 }
 
-export default{
+/* harmony default export */ __webpack_exports__["a"] = ({
 	Thumb
-}
+});
+
+/***/ })
+
+})
